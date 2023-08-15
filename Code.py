@@ -7,7 +7,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 # Replace with the path to your credentials JSON file
-credentials_path = r'C:\Users\musin\IdeaProjects\\SpreadSheets\model-fastness-394513-95470a5ec8a5.json'
+credentials_path = PATH_TO_JSON
 
 # Authenticate with Google Sheets API using credentials
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
@@ -31,7 +31,7 @@ worksheet2 = gc.open_by_key(spreadsheet_key).worksheet(worksheet_name2)
 
 
 
-gmail = Gmail()
+gmail = Gmail(PATH_TO_JSON)
 
 query_params = {
     "newer_than": (12, "hours"),
